@@ -54,5 +54,25 @@ public class ForExamples {
             }
         }
         System.out.println(number);
+
+        // 1. Տպել 1-ից 1000 թվերը իրար կողք, արանքում դնելով - սինվոլը։ Այնպես գրեք, որ վերջում - չլինի։
+        // 2. օրինակ
+        System.out.println("1-ին վարժության 2-րդ օրինակ");
+        int[] numbers3 = new int[1001];
+        char[] minus1 = {'-'};
+        for (int i = 1; i < numbers3.length; i++) {
+            if (i == 501){
+                for (int j = 0; j < minus1.length; j++) {
+                    System.out.print(minus1[j] + " ");
+                }
+            }
+            numbers3[i] = i;
+            System.out.print(numbers3[i] + " ");
+        }
+        System.out.println();
+
+        for (int i = 1; i < numbers3.length; i++) {
+            System.out.print(numbers3[i] + " ");
+        }
     }
 }
