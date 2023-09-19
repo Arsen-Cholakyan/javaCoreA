@@ -3,7 +3,6 @@ package homeworcs.dinamicArray;
 public class DynamicArrayDemo {
     public static void main(String[] args) {
         DynamicArray myDynamicArray = new DynamicArray();
-
         myDynamicArray.add(54);
         myDynamicArray.add(1);
         myDynamicArray.add(0);
@@ -32,5 +31,8 @@ public class DynamicArrayDemo {
         f = myDynamicArray.getByIndex(21);
         System.out.println(f);
         myDynamicArray.print();
+
+
+
     }
 }

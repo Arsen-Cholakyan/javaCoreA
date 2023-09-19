@@ -38,18 +38,17 @@ public class DynamicArray {
     public int getByIndex(int index) {
         int a = -1;
         for (int i = 0; i < array.length; i++) {
-            if (i == index){
+            if (i == index) {
                 a = array[i];
             }
         }
-
         return a;
     }
 
     //տպել մասիվի ավելացված էլեմենտները
     public void print() {
         for (int x : array) {
-            System.out.print("|" +x + "|");
+            System.out.print("|" + x + "|");
         }
     }
 }
