@@ -38,6 +38,8 @@ public class MyExamplesC5P1 {
             o--;
         } while (o > 0);
 
+        System.out.println();
+
     }
 }
 
