@@ -31,6 +31,41 @@ public class DynamicArrayDemo {
         f = myDynamicArray.getByIndex(21);
         System.out.println(f);
         myDynamicArray.print();
+        myDynamicArray.deleteByIndex(5);
+        myDynamicArray.print();
+        myDynamicArray.deleteByIndex(9);
+        myDynamicArray.print();
+        myDynamicArray.deleteByIndex(17);
+        myDynamicArray.print();
+        myDynamicArray.deleteByIndex(17);
+        myDynamicArray.set(0,3665);
+        myDynamicArray.print();
+        myDynamicArray.set(0,554609);
+        myDynamicArray.print();
+        myDynamicArray.set(17,8766);
+        myDynamicArray.add(0,4598);
+        myDynamicArray.print();
+        myDynamicArray.add(16,6453);
+        myDynamicArray.print();
+        myDynamicArray.add(15,64732);
+        myDynamicArray.print();
+        boolean b = myDynamicArray.exists(1);
+        System.out.println(b);
+        b = myDynamicArray.exists(0);
+        System.out.println(b);
+        b = myDynamicArray.exists(64732);
+        System.out.println(b);
+        b = myDynamicArray.exists(54);
+        System.out.println(b);
+        int i = myDynamicArray.getIndexByValue(1);
+        System.out.println(i);
+        i = myDynamicArray.getIndexByValue(64732);
+        System.out.println(i);
+        i = myDynamicArray.getIndexByValue(7453658);
+        System.out.println(i);
+
+
+
 
 
 
