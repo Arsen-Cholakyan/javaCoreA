@@ -40,6 +40,29 @@ public class MyExamplesC5P1 {
 
         System.out.println();
 
+        //for-ի օրինակ
+        for (int i = 0; i < 4; i++) {
+            System.out.print("|" +"ars" + "|");
+        }
+        System.out.println();
+
+
+        //!-ի օրինակ
+        boolean d = false;
+        boolean b1 = !d;
+        System.out.println(b1);
+
+        //իմ օրինակ
+        boolean f = true;
+        int or  = 0;
+        for (; f ;) {
+            or++;
+            if (or == 11){
+                break;
+            }
+            System.out.println(or);
+        }
+
     }
 }
 

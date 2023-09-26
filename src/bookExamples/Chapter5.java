@@ -1,14 +1,16 @@
 package bookExamples;
 
+import static java.lang.Thread.interrupted;
+
 public class Chapter5 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws java.io.IOException {
 
         //գրքի 1-ին օրինակ
         int a, b;
-        b= 10;
+        b = 10;
         a = 5;
         if (a < b) a = 0;
-         else b = 0;
+        else b = 0;
 
         //գրքի 2-րդ օրինակ
 //        int bytesAvailable = 10;
@@ -27,31 +29,31 @@ public class Chapter5 {
         int d = 30;
         int j = 8;
 
-        if (i == 10){
-            if (j < 10) a =b;
+        if (i == 10) {
+            if (j < 10) a = b;
             if (k > 100) c = d;
             else a = c;
-        }else a = d;
+        } else a = d;
 
         //գրքի 4-րդ օրինակ
         int month = 4;
         String season = " ";
-        if (month == 12 || month == 1 || month == 2){
+        if (month == 12 || month == 1 || month == 2) {
             season = "ձմեռ";
-        }else if (month == 3 || month == 4 || month==5){
+        } else if (month == 3 || month == 4 || month == 5) {
             season = "գարուն";
-        }else if (month == 6 || month == 7 || month == 8){
+        } else if (month == 6 || month == 7 || month == 8) {
             season = "ամառ";
-        }else if (month == 9 || month == 10 || month==11){
+        } else if (month == 9 || month == 10 || month == 11) {
             season = "աշուն";
-        }else System.out.println("հօրինված ամիս");
+        } else System.out.println("հօրինված ամիս");
 
         System.out.println("ապրիլ ամիսը պատկանում է " + season);
 
 
         //գրքի 5-րդ օրինակ
         for (int l = 0; l < 6; l++) {
-            switch (l){
+            switch (l) {
                 case 0:
                     System.out.println("l-ը հավասար է 0-ի");
                     break;
@@ -71,7 +73,7 @@ public class Chapter5 {
 
         //գրքի 5-րդ օրինակ
         for (int l = 0; l < 12; l++) {
-            switch (i){
+            switch (i) {
                 case 0:
                 case 1:
                 case 2:
@@ -94,7 +96,7 @@ public class Chapter5 {
         //գրքի 6-րդ օրինակ
         int monte = 4;
         String season1 = " ";
-        switch (monte){
+        switch (monte) {
             case 12:
             case 1:
             case 2:
@@ -108,12 +110,12 @@ public class Chapter5 {
             case 6:
             case 7:
             case 8:
-                season1="ամառ";
+                season1 = "ամառ";
                 break;
             case 9:
             case 10:
             case 11:
-                season1="աշուն";
+                season1 = "աշուն";
                 break;
             default:
                 System.out.println("այդպիսի ամիիս գօյուտյուն չունի");
@@ -123,13 +125,13 @@ public class Chapter5 {
 
         //գրքի 7-րդ օրինակ
         String str = "երկու";
-        switch (str){
+        switch (str) {
             case "մեկ":
                 System.out.println("մեկ");
-            break;
-            case  "երկու":
+                break;
+            case "երկու":
                 System.out.println("երկու");
-             break;
+                break;
             case "երեք":
                 System.out.println("երեք");
                 break;
@@ -139,10 +141,82 @@ public class Chapter5 {
 
         //գրքի 8-րդ օրինակ while
         int n = 10;
-        while (n > 0){
+        while (n > 0) {
             System.out.println("տակտ" + n);
             n--;
         }
 
+        //գրքի 9-րդ օրինակ System.in.red();
+        char choice = '0';
+        do {
+            System.out.println("Справка по оператру");
+            System.out.println("        1. if");
+            System.out.println("        2. switch");
+            System.out.println("        3. while");
+            System.out.println("        4. do-while");
+            System.out.println("        5. for\n");
+            System.out.println("Виберите нужный пункт");
+            choice = (char) System.in.read();
+        } while (choice < '1' || choice > '5');
+
+        System.out.println("\n");
+
+        switch (choice) {
+            case '1':
+                System.out.println("if:\n");
+                System.out.println("if(услове) оператор;");
+                System.out.println("else оператор");
+                break;
+            case '2':
+                System.out.println("switch:\n");
+                System.out.println("switch(виражение)");
+                System.out.println("case кастанта");
+                System.out.println("паследователность операторов");
+                break;
+            case '3':
+                System.out.println("while:\n");
+                System.out.println("while (услове) оператор");
+                break;
+            case '4':
+                System.out.println("do-while:\n");
+                System.out.println("do {");
+                System.out.println("      оператор");
+                System.out.println("} while (условя)");
+                break;
+            case '5':
+                System.out.println("for: \n");
+                System.out.println("for (иницализация; условя; итерация)");
+                System.out.println("оператор");
+
+        }
+        System.out.println();
+
+        //գրքի 10-րդ օրինակ for
+        int n1;
+        for (n1 = 10; n1 > 0; n1--) {
+            System.out.println("тест" + n1);
+        }
+
+        //գրքի օրինակ 11-րդ for2
+        boolean done = false;
+        for (int l = 1; !done; l++) {
+            //....
+            if (interrupted()) {
+                done = true;
+            }
+        }
+
+        //գրքի օրինակ 12-րդ for3
+        int i1;
+        boolean done1 = false;
+        i1 = 0;
+        for (; !done1; ) {
+            System.out.println("i1 раво " + i1);
+            if (i1 == 10) {
+                done1 = true;
+                i++;
+            }
+        }
     }
 }
+
