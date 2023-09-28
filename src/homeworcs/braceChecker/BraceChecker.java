@@ -46,12 +46,14 @@ public class BraceChecker {
                     if (c1 != '(') {
                         System.err.println("բացվել է " + c1 + " փակվել է " + textArray[i] + " սխալը գտնվում է " + i + "-index-ի վրա");
                     }
+                    break;
 
                 case ']':
                     char c2 = (char) stack.pop();
                     if (c2 != '[') {
                         System.err.println("բացվել է " + c2 + " փակվել է " + textArray[i] + " սխալը գտնվում է " + i + "-index-ի վրա");
                     }
+                    break;
             }
         }
     }
