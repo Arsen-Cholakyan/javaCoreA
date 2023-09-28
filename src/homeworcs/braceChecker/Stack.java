@@ -16,7 +16,6 @@ public class Stack {
 
     public int pop() {
         if (size < 0) {
-            System.out.println("դատարկ է");
             return 0;
         } else {
             return array[size--];
