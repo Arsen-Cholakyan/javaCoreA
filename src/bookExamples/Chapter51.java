@@ -2,7 +2,7 @@ package bookExamples;
 
 import static java.lang.Thread.interrupted;
 
-public class Chapter5 {
+public class Chapter51 {
     public static void main(String[] args) throws java.io.IOException {
 
         //գրքի 1-ին օրինակ
