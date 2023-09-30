@@ -5,7 +5,7 @@ public class Chapter5P2 {
 
         //գրքի օրինակ 1 break-for-ի մեջ
         for (int i = 0; i < 100; i++) {
-            if ( i == 10){
+            if (i == 10) {
                 break;
             }
             System.out.println("i :" + i);
@@ -14,11 +14,11 @@ public class Chapter5P2 {
 
         //գրքի օրինակ 2 break-ը wail-ի մեջ
         int i1 = 0;
-        while (i1 < 100){
-            if (i1 == 10){
+        while (i1 < 100) {
+            if (i1 == 10) {
                 break;
             }
-            System.out.println("i1:"+ i1);
+            System.out.println("i1:" + i1);
             i1++;
         }
 
@@ -26,7 +26,7 @@ public class Chapter5P2 {
         for (int i = 0; i < 3; i++) {
             System.out.print("Проход " + i + ": ");
             for (int j = 0; j < 100; j++) {
-                if (j  == 10){
+                if (j == 10) {
                     break;
                 }
                 System.out.print(j + " ");
@@ -38,15 +38,18 @@ public class Chapter5P2 {
 
         //գրքի օրինակ breakleibl-ի 1-ին օրինակ
         boolean t = true;
-        first:{
-            second:{
-            third:{
-                System.out.println("Предшествует оператру break");
-                if (t == true){
-                    break second;
+        first:
+        {
+            second:
+            {
+                third:
+                {
+                    System.out.println("Предшествует оператру break");
+                    if (t == true) {
+                        break second;
+                    }
+                    System.out.println("этот оператор не будет випалняться");
                 }
-                System.out.println("этот оператор не будет випалняться");
-            }
                 System.out.println("этот оператор не будет випалняться");
 
             }
@@ -55,7 +58,8 @@ public class Chapter5P2 {
 
 
         //գրքի օրինակ breakleibl-ի 2-րդ օրինակ
-        outer:{
+        outer:
+        {
             for (int i = 0; i < 3; i++) {
                 System.out.println("проход" + i + ": ");
                 for (int j = 0; j < 100; j++) {
@@ -80,17 +84,17 @@ public class Chapter5P2 {
         }
 
         //գրքի continue-ի օրինակ breakLeibl-ների հետ
-
-        outer:  for (int i = 0; i < 10; i++) {
-                for (int j = 0; j < 10; j++) {
-                    if (j > i ){
-                        System.out.println();
-                        continue outer;
-                    }
-                    System.out.print(" " + (i * j));
+        outer:
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (j > i) {
+                    System.out.println();
+                    continue outer;
                 }
+                System.out.print(" " + (i * j));
             }
-            System.out.println();
+        }
+        System.out.println();
 
 
     }
