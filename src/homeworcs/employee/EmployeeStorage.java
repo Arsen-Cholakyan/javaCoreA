@@ -35,8 +35,8 @@ public class EmployeeStorage {
         System.out.println();
     }
 
-    public void search(String IDVerification) {
-        System.out.println("ԲՈԼՈՐ ԱՇԽԱՏԱԿԻՑՆԵՐԸ");
+    public void companyEmployee(String IDVerification) {
+        System.out.println(" ԱՇԽԱՏԱԿԻՑԸ");
         for (int i = 0; i < size; i++) {
             if (employees[i].getEmplyeeID().contains(IDVerification)) {
                 System.out.println("անունը -" + employees[i].getName() + " " + " ազգանունը -" + employees[i].getSurname() + " " +
@@ -47,7 +47,7 @@ public class EmployeeStorage {
         System.out.println();
     }
 
-    public void search1(String companyName) {
+    public void companyEmployees(String companyName) {
         System.out.println("ԲՈԼՈՐ ԱՇԽԱՏԱԿԻՑՆԵՐԸ");
         for (int i = 0; i < size; i++) {
             if (employees[i].getCompany().contains(companyName)) {
@@ -60,29 +60,28 @@ public class EmployeeStorage {
     }
 
 
-    public void search2(String IDVerification2) {
+    public void DeleteById(String IDVerification2) {
+        int ars = 0;
         boolean b = false;
         for (int i = 0; i < size; i++) {
-            if (employees[i].getEmplyeeID().equals(IDVerification2)) {
+            if (employees[i].getEmplyeeID().contains(IDVerification2)) {
                 b = true;
-                System.out.println("Անուն");
-                employees[i].setName(scanner.nextLine());
-                System.out.println("Ազգանուն");
-                employees[i].setSurname(scanner.nextLine());
-                System.out.println("Գումար");
-                employees[i].setSalary(scanner.nextLine());
-                System.out.println("Ընկերություն");
-                employees[i].setCompany(scanner.nextLine());
-                System.out.println("Ոլերտ");
-                employees[i].setPosition(scanner.nextLine());
-                System.out.println("Տարիք");
-                employees[i].setAge(scanner.nextInt());
-                System.out.println("Տարեթիվ");
-                employees[i].setBirthNumber(scanner.nextInt());
+                ars = i;
+                --size;
+                for (int j = ars; j < size; j++) {
+                    employees[j].setName(employees[j+1].getName());
+                    employees[j].setSurname(employees[j+1].getSurname());
+                    employees[j].setEmplyeeID(employees[j+1].getEmplyeeID());
+                    employees[j].setSalary(employees[j+1].getSalary());
+                    employees[j].setCompany(employees[j+1].getCompany());
+                    employees[j].setPosition(employees[j+1].getPosition());
+                    employees[j].setAge(employees[j+1].getAge());
+                    employees[j].setBirthNumber(employees[j+1].getBirthNumber());
+                }
             }
         }
         if (b == false){
-            System.out.println("չկա նաման ID");
+            System.out.println("չկա նման ID");
         }
     }
 }

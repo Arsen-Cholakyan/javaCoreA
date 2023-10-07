@@ -95,21 +95,21 @@ public class EmployeeDemo {
     public static void showTheEmployee() {
         System.out.println("գրեք ID");
         String IDVerification = scanner.nextLine();
-        employeeStorage.search(IDVerification);
+        employeeStorage.companyEmployee(IDVerification);
     }
 
 
     public static void employeesOfTheCompany() {
         System.out.println("տվեք ընկերության անունը");
         String companyName = scanner.nextLine();
-        employeeStorage.search1(companyName);
+        employeeStorage.companyEmployees(companyName);
     }
 
 
     public static void deleteTheEmployee() {
         System.out.println("ոթե գուզեք աշխատակցի տվյալները փոխեկ տվեկ ID");
         String IDVerification2 = scanner.nextLine();
-        employeeStorage.search2(IDVerification2);
+        employeeStorage.DeleteById(IDVerification2);
 
 
     }
