@@ -107,8 +107,10 @@ public class EmployeeDemo {
 
 
     public static void deleteTheEmployee() {
-        System.out.println("աշխատակցին ջնջելու համար տվեք իրա ID");
+        System.out.println("ոթե գուզեք աշխատակցի տվյալները փոխեկ տվեկ ID");
         String IDVerification2 = scanner.nextLine();
         employeeStorage.search2(IDVerification2);
+
+
     }
 }
