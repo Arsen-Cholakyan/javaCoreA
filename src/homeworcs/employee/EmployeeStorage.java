@@ -22,7 +22,7 @@ public class EmployeeStorage {
     public void print() {
         System.out.println("ԲՈԼՈՐ ԱՇԽԱՏԱԿԻՑՆԵՐԸ");
         for (int i = 0; i < size; i++) {
-            if (employees[i].getEmplyeeID() != null){
+            if (employees[i].getEmplyeeID() != null) {
                 System.out.println("անունը -" + employees[i].getName() + " " + " ազգանունը -" + employees[i].getSurname() + " " +
                         " ID-ին -" + employees[i].getEmplyeeID() + " " + " աշխատավարձի չափսը -" + employees[i].getSalary() + " " + " ընկերություն -" + employees[i].getCompany() +
                         " " + " ոլորտ -" + employees[i].getPosition() + " " + " տարիքը -" + employees[i].getAge() + " " + " տարեթիվը -" + employees[i].getBirthNumber());
@@ -56,13 +56,11 @@ public class EmployeeStorage {
     }
 
 
-    public void search2(String IDVerification2){
+    public void search2(String IDVerification2) {
         for (int i = 0; i < size; i++) {
-            if (employees[i].getEmplyeeID().contains(IDVerification2)){
+            if (employees[i].getEmplyeeID().contains(IDVerification2)) {
                 employees[i].setEmplyeeID(null);
             }
         }
-
     }
-
 }
