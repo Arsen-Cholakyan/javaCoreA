@@ -4,6 +4,7 @@ import homeworcs.medicalCenter.doctorsAndPatients.Doctor;
 import homeworcs.medicalCenter.doctorsAndPatients.Patient;
 import homeworcs.medicalCenter.storages.DoctorStorage;
 import homeworcs.medicalCenter.storages.PatientStorage;
+
 import java.util.Scanner;
 
 public class DoctorAndPatientMain {
@@ -60,7 +61,7 @@ public class DoctorAndPatientMain {
         if (doctorFromStorage == null) {
             System.out.println("չկա նման ID-ով բժիշկ");
             return;
-        }else {
+        } else {
             doctorStorage.deletDoctor(id);
             patientStorage.deletPatient(doctorFromStorage);
             return;
@@ -75,11 +76,10 @@ public class DoctorAndPatientMain {
         if (doctorFromStorage == null) {
             System.out.println("չկա նման ID-ով բժիշկ");
             return;
-        }else {
+        } else {
             patientStorage.prinpAllPatientBYId(doctorFromStorage);
         }
     }
-
 
 
     private static void registerPatient() {
@@ -96,19 +96,19 @@ public class DoctorAndPatientMain {
                     System.out.println("փորցոկ 10-րոպե հետո");
                     return;
                 }
-            }else {
+            } else {
                 System.out.println("տվեք ձեր ID-ին");
-                while (true){
+                while (true) {
                     String patientId = scanner.nextLine();
                     Patient patientsFromStorage = patientStorage.getByID(patientId);
-                    if (patientsFromStorage != null){
+                    if (patientsFromStorage != null) {
                         System.err.println("այդպիսի ID-ով արդեն անձ կա");
                         --experience;
-                        if (experience == 0){
+                        if (experience == 0) {
                             System.out.println("փորցոկ 10-րոպե հետո");
                             return;
                         }
-                    }else {
+                    } else {
                         System.out.println("տվեք ձեր անունը");
                         String name = scanner.nextLine();
                         System.out.println("տվեք ձեր ազգանունը");
@@ -117,7 +117,7 @@ public class DoctorAndPatientMain {
                         int phone = Integer.parseInt(scanner.nextLine());
                         System.out.println("օր ժամ ամիս ");
                         String registerDateTime = scanner.nextLine();
-                        Patient patient = new Patient(patientId,name,surname,phone,doctorFromStorage,registerDateTime);
+                        Patient patient = new Patient(patientId, name, surname, phone, doctorFromStorage, registerDateTime);
                         patientStorage.addPatients(patient);
                         return;
                     }

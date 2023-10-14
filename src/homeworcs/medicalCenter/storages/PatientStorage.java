@@ -25,9 +25,9 @@ public class PatientStorage {
 
 
     public void print() {
-        if (size == 0 ){
+        if (size == 0) {
             System.err.println("հիվանդ չկա");
-        }else {
+        } else {
             for (int i = 0; i < size; i++) {
                 System.out.println(patients[i]);
             }
@@ -35,12 +35,9 @@ public class PatientStorage {
     }
 
 
-
-
-
     public void prinpAllPatientBYId(Doctor doctorFromStorage) {
         for (int i = 0; i < size; i++) {
-            if (patients[i].getDoctor().equals(doctorFromStorage)){
+            if (patients[i].getDoctor().equals(doctorFromStorage)) {
                 System.out.println(patients[i]);
             }
         }
@@ -49,19 +46,19 @@ public class PatientStorage {
     public void deletPatient(Doctor doctorFromStorage) {
         int a = 0;
         for (int i = 0; i < size; i++) {
-            if (patients[i].getDoctor().equals(doctorFromStorage)){
+            if (patients[i].getDoctor().equals(doctorFromStorage)) {
                 a = i;
             }
         }
-        for (int i = a+1; i <size; i++) {
-            patients[i-1] = patients[i];
+        for (int i = a + 1; i < size; i++) {
+            patients[i - 1] = patients[i];
         }
         size--;
     }
 
     public Patient getByID(String patientId) {
         for (int i = 0; i < size; i++) {
-            if (patients[i].getId().equals(patientId)){
+            if (patients[i].getId().equals(patientId)) {
                 return patients[i];
             }
         }

@@ -90,7 +90,6 @@ public class Person {
     }
 
 
-
     public int getPhone() {
         return phone;
     }
@@ -98,7 +97,6 @@ public class Person {
     public void setPhone(int phone) {
         this.phone = phone;
     }
-
 
 
     @Override

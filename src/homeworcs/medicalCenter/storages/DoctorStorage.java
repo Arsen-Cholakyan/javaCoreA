@@ -8,7 +8,6 @@ public class DoctorStorage extends Person {
     private int size = 0;
 
 
-
     public void addDoctors(Doctor doctor) {
         if (size == doctors.length) {
             extend();
@@ -24,9 +23,9 @@ public class DoctorStorage extends Person {
     }
 
     public void printDoctors() {
-        if (size == 0 ){
+        if (size == 0) {
             System.err.println("բժիշկ չկա");
-        }else {
+        } else {
             for (int i = 0; i < size; i++) {
                 System.out.println(doctors[i]);
             }
@@ -52,7 +51,7 @@ public class DoctorStorage extends Person {
                 System.out.println(doctors[i]);
             }
         }
-        if (check == false){
+        if (check == false) {
             System.err.println("Չկա նման մասնագիտությամպ բժիշկ");
             return;
         }
@@ -62,12 +61,12 @@ public class DoctorStorage extends Person {
 
     public void deletDoctor(String id) {
         int a = 0;
-        for (int i = 0; i <size ; i++) {
-            if (doctors[i].getId().equals(id)){
+        for (int i = 0; i < size; i++) {
+            if (doctors[i].getId().equals(id)) {
                 a = i;
             }
         }
-        for (int i = a+1; i <size ; i++) {
+        for (int i = a + 1; i < size; i++) {
             doctors[i - 1] = doctors[i];
         }
         size--;
