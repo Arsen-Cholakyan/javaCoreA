@@ -107,7 +107,7 @@ public class EmployeeDemo {
 
 
     public static void deleteTheEmployee() {
-        System.out.println("ոթե գուզեք աշխատակցի տվյալները փոխեկ տվեկ ID");
+        System.out.println("Եթե գուզեք աշխատակցին հեռացնել աշխատանքից ապա տվեք ID-ին ");
         String IDVerification2 = scanner.nextLine();
         employeeStorage.DeleteById(IDVerification2);
 
