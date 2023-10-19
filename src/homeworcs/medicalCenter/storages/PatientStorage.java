@@ -3,6 +3,8 @@ package homeworcs.medicalCenter.storages;
 import homeworcs.medicalCenter.doctorsAndPatients.Doctor;
 import homeworcs.medicalCenter.doctorsAndPatients.Patient;
 
+import java.util.Date;
+
 
 public class PatientStorage {
     private Patient[] patients = new Patient[10];
@@ -59,6 +61,15 @@ public class PatientStorage {
     public Patient getByID(String patientId) {
         for (int i = 0; i < size; i++) {
             if (patients[i].getId().equals(patientId)) {
+                return patients[i];
+            }
+        }
+        return null;
+    }
+
+    public Patient data(Date registerDateTime) {
+        for (int i = 0; i < size; i++) {
+            if (patients[i].getRegisterDateTime().equals(registerDateTime)){
                 return patients[i];
             }
         }

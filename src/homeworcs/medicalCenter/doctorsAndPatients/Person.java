@@ -1,5 +1,6 @@
 package homeworcs.medicalCenter.doctorsAndPatients;
 
+import java.util.Date;
 import java.util.Objects;
 
 public class Person {
@@ -10,9 +11,9 @@ public class Person {
     private int phone;
     private String profession;
     private Doctor doctor;
-    private String registerDateTime;
+    private Date registerDateTime;
 
-    public Person(String id, String name, String surname, int phone, Doctor doctor, String registerDateTime) {
+    public Person(String id, String name, String surname, int phone, Doctor doctor, Date registerDateTime) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -57,11 +58,11 @@ public class Person {
         this.doctor = doctor;
     }
 
-    public String getRegisterDateTime() {
+    public Date getRegisterDateTime() {
         return registerDateTime;
     }
 
-    public void setRegisterDateTime(String registerDateTime) {
+    public void setRegisterDateTime(Date registerDateTime) {
         this.registerDateTime = registerDateTime;
     }
 

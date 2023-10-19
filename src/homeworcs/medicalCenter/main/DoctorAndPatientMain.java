@@ -2,16 +2,19 @@ package homeworcs.medicalCenter.main;
 
 import homeworcs.medicalCenter.doctorsAndPatients.Doctor;
 import homeworcs.medicalCenter.doctorsAndPatients.Patient;
+import homeworcs.medicalCenter.storages.Command;
 import homeworcs.medicalCenter.storages.DoctorStorage;
 import homeworcs.medicalCenter.storages.PatientStorage;
 
+import java.util.Date;
 import java.util.Scanner;
 
-public class DoctorAndPatientMain {
+public class DoctorAndPatientMain implements Command{
 
     static Scanner scanner = new Scanner(System.in);
     static DoctorStorage doctorStorage = new DoctorStorage();
     static PatientStorage patientStorage = new PatientStorage();
+
 
 
     public static void main(String[] args) {
@@ -20,31 +23,31 @@ public class DoctorAndPatientMain {
             printCommandes();
             String commands = scanner.nextLine();
             switch (commands) {
-                case "0":
+                case Exit:
                     isRun = false;
                     break;
-                case "1":
+                case DOCTOR_REGISTRATION:
                     doctorsRegister();
                     break;
-                case "2":
+                case TO_SEARCH_FOR_A_DOCTOR_BY_PROFESSION:
                     searchByProfession();
                     break;
-                case "3":
+                case DELETE_DOCTOR_BY_ID:
                     deletDctors();
                     break;
-                case "4":
+                case CHANGE_DOCTOR_BY_ID:
                     changeDoctor();
                     break;
-                case "5":
+                case ADD_PATIENT:
                     registerPatient();
                     break;
-                case "6":
+                case PATIENT_ALL_PATIENTS_BY_DOCTOR:
                     printAllPatiendsById();
                     break;
-                case "7":
+                case PATIENT_ALL_PATIENTS:
                     patientStorage.print();
                     break;
-                case "8":
+                case PATIENT_ALL_DOCTORS:
                     doctorStorage.printDoctors();
                     break;
                 default:
@@ -116,10 +119,17 @@ public class DoctorAndPatientMain {
                         System.out.println("տվեք ձեր հեռախոսահամարը");
                         int phone = Integer.parseInt(scanner.nextLine());
                         System.out.println("օր ժամ ամիս ");
-                        String registerDateTime = scanner.nextLine();
-                        Patient patient = new Patient(patientId, name, surname, phone, doctorFromStorage, registerDateTime);
-                        patientStorage.addPatients(patient);
-                        return;
+                        Date registerDateTime = new Date();
+                        Patient dateTyTime = patientStorage.data(registerDateTime);
+                        if (dateTyTime == null){
+                            Patient patient = new Patient(patientId, name, surname, phone, doctorFromStorage, registerDateTime);
+                            patientStorage.addPatients(patient);
+                            return;
+                        }else {
+                            System.err.println("արդեն զբաղված է");
+                            return;
+                        }
+
                     }
                 }
 
@@ -194,14 +204,14 @@ public class DoctorAndPatientMain {
     }
 
     private static void printCommandes() {
-        System.out.println("դուրս գալ։ Սեխմեք - 0");
-        System.out.println("բժշկի գրանցում։ Սեխմել - 1");
-        System.out.println("մասնագիտությամբ բժիշկ որոնել։ Սեխմել 2");
-        System.out.println("ջնջել բժշկին id-ով: Սեխմել 3");
-        System.out.println("փոխել բժշկին ըստ ID-ի: Սեխմել 4");
-        System.out.println("ավելացնել հիվանդին: Սեխմել 5");
-        System.out.println("տպել բոլոր հիվանդներին բժշկի կողմից: Սեխմել 6");
-        System.out.println("տպել բոլոր հիվանդներին: սեխմել 7");
-        System.out.println("ցույց տալ բոլոր բժիշկներին։ Սեխմել 8");
+        System.out.println("դուրս գալ։ Սեխմեք -" + Exit);
+        System.out.println("բժշկի գրանցում։ Սեխմել - " + DOCTOR_REGISTRATION);
+        System.out.println("մասնագիտությամբ բժիշկ որոնել։ Սեխմել" +TO_SEARCH_FOR_A_DOCTOR_BY_PROFESSION );
+        System.out.println("ջնջել բժշկին id-ով: Սեխմել " + DELETE_DOCTOR_BY_ID);
+        System.out.println("փոխել բժշկին ըստ ID-ի: Սեխմել " + CHANGE_DOCTOR_BY_ID);
+        System.out.println("ավելացնել հիվանդին: Սեխմել " + ADD_PATIENT);
+        System.out.println("տպել բոլոր հիվանդներին բժշկի կողմից: Սեխմել " + PATIENT_ALL_PATIENTS_BY_DOCTOR);
+        System.out.println("տպել բոլոր հիվանդներին: սեխմել " + PATIENT_ALL_PATIENTS);
+        System.out.println("ցույց տալ բոլոր բժիշկներին։ Սեխմել " + PATIENT_ALL_DOCTORS);
     }
 }
