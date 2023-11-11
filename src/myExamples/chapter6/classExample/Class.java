@@ -1,4 +1,4 @@
-package myExamples.chapter6;
+package myExamples.chapter6.classExample;
 
 //մաս 1
 public class Class {
