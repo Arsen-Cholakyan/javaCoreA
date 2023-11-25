@@ -42,7 +42,7 @@ public class FamilyTST {
                         String dadeName = scanner.nextLine();
                         System.out.println("Տվեք տարիքը");
                         String age = scanner.nextLine();
-                        Family family = new Family(name, surname, dadeName, age);
+                        Family family = new Family(name);
                         System.out.println(family.name + " " + family.surname + " " + family.dadeName + " " + family.age);
                     } else {
                         System.err.println(name + " " + "չկա նման անուն");

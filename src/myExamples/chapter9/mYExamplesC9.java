@@ -23,8 +23,7 @@ public class mYExamplesC9 {
                         int ars = Integer.parseInt(scanner.nextLine());
                         if (ars != a){
                             System.out.println("chka");
-                            b1 = ars;
-                            System.out.println(b1);
+                            System.out.println(ars);
                             break;
                         }else {
                             System.out.println("կա");

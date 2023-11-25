@@ -6,7 +6,7 @@ public class Family {
      String dadeName;
      String age;
 
-     public Family(String name, String surname, String dadeName, String age) {
+     public Family(String name) {
           this.name = name;
           this.surname = surname;
           this.dadeName = dadeName;

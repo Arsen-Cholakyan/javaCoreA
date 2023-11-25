@@ -6,6 +6,12 @@ public class Box {
     double height;
     double depth;
 
+    Box(){
+        Width = 20;
+        height = 15;
+        depth = 34;
+    }
+
 
 
 
