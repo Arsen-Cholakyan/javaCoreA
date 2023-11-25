@@ -12,7 +12,7 @@ public class FileAnalyzerMain implements Commands {
     static Scanner scanner = new Scanner(System.in);
     static FileAnalyzer fileAnalyzer = new FileAnalyzer();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
         File file = new File(path);
         boolean isRun = true;
         while (isRun == true) {
@@ -45,6 +45,13 @@ public class FileAnalyzerMain implements Commands {
                     }
                     break;
                 case TASK4:
+                    System.out.println("տվեք ինչ որ մի թիվ");
+                    int n = Integer.parseInt(scanner.nextLine());
+                    try {
+                        System.out.println(fileAnalyzer.topFrequentWords(path,n));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 case TASK5:
                     System.out.println("խնդրում ենք տվեք ինչ, որ մի բառ");

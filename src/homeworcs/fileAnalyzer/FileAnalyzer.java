@@ -32,7 +32,7 @@ public class FileAnalyzer {
         if (map != null) {
             return map;
         }
-            return null;
+        return null;
     }
 
     public int totalWordCount(String path) throws IOException {
@@ -51,67 +51,75 @@ public class FileAnalyzer {
         return 0;
     }
 
-        public int uniqueWordCount (String path) throws IOException {
-            // Читаем файл, подсчитываем количество уникальных слов
-            int numberOfDistinctOnes = 0;
-            int quantity = 0;
-            String fulTxt = "";
-            File file = new File(path);
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-            String txt;
-            while ((txt = bufferedReader.readLine()) != null) {
-                fulTxt += txt + " ";
-            }
-            String[] words = fulTxt.split(" ");
-            for (String word : words) {
-                for (String word2 : words) {
-                    if (word2.equals(word)) {
-                        quantity++;
-                    }
-                }
-                if (quantity == 1) {
-                    numberOfDistinctOnes++;
-                    System.out.println(word + " " + numberOfDistinctOnes);
-                }
-                quantity = 0;
-            }
-            if (numberOfDistinctOnes != 0) {
-                System.out.print("չկրկնվողների ընդանուր քանակը-");
-                return numberOfDistinctOnes;
-            }
-            return 0;
+    public int uniqueWordCount(String path) throws IOException {
+        // Читаем файл, подсчитываем количество уникальных слов
+        int numberOfDistinctOnes = 0;
+        int quantity = 0;
+        String fulTxt = "";
+        File file = new File(path);
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        String txt;
+        while ((txt = bufferedReader.readLine()) != null) {
+            fulTxt += txt + " ";
         }
-
-
+        String[] words = fulTxt.split(" ");
+        for (String word : words) {
+            for (String word2 : words) {
+                if (word2.equals(word)) {
+                    quantity++;
+                }
+            }
+            if (quantity == 1) {
+                numberOfDistinctOnes++;
+                System.out.println(word + " " + numberOfDistinctOnes);
+            }
+            quantity = 0;
+        }
+        if (numberOfDistinctOnes != 0) {
+            System.out.print("չկրկնվողների ընդանուր քանակը-");
+            return numberOfDistinctOnes;
+        }
+        return 0;
+    }
 
 
     public Map<String, Integer> topFrequentWords(String path, int n) throws IOException {
         // Читаем файл, находим топ-N часто встречающихся слов
+        Map<String, Integer> map = new HashMap<>(wordMap(path));
+        Map<String, Integer> map2 = new HashMap<>();
+        for (Map.Entry<String, Integer> ars : map.entrySet()) {
+            if (ars.getValue() > n) {
+                map2.put(ars.getKey(), ars.getValue());
+            }
+        }
+        if (map2 != null) {
+            return map2;
+        }
         return null;
     }
 
     public int countWordOccurrences(String path, String word) throws IOException {
         // Читаем файл, находим количество вхождений слова и возвращаем это число
-           int quantity = 0;
-           String fulTxt = "";
-           File file = new File(path);
-           BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-           String txt;
-           while ((txt = bufferedReader.readLine()) != null){
-               fulTxt += txt + " ";
-           }
-           String[] words = fulTxt.split(" ");
-        for (String word2: words) {
-            if (word2.equals(word)){
+        int quantity = 0;
+        String fulTxt = "";
+        File file = new File(path);
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        String txt;
+        while ((txt = bufferedReader.readLine()) != null) {
+            fulTxt += txt + " ";
+        }
+        String[] words = fulTxt.split(" ");
+        for (String word2 : words) {
+            if (word2.equals(word)) {
                 quantity++;
             }
         }
-        if (quantity != 0){
+        if (quantity != 0) {
             System.out.print(word + "-");
             return quantity;
         }
-            System.out.println("չկա նման բառ");
-            return 0;
-        }
+        System.out.println("չկա նման բառ");
+        return 0;
     }
+}
 
