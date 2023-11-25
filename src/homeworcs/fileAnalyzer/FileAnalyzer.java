@@ -38,7 +38,6 @@ public class FileAnalyzer {
 
     public int totalWordCount(String path) throws IOException {
         // Читаем файл, подсчитываем общее количество слов
-        int quantity = 0;
         String entireTxt = "";
         File file = new File(path);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
