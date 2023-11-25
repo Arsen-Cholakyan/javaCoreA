@@ -118,7 +118,7 @@ public class FileAnalyzer {
             System.out.print(word + "-");
             return quantity;
         }
-        System.out.println("չկա նման բառ");
+        System.err.println("չկա նման բառ");
         return 0;
     }
 }
