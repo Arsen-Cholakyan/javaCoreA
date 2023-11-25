@@ -87,8 +87,9 @@ public class FileAnalyzer {
     }
 
 
-    public Map<String, Integer> topFrequentWords(String path, int n, Map wordMap) throws IOException {
+    public Map<String, Integer> topFrequentWords(String path, int n) throws IOException {
         // Читаем файл, находим топ-N часто встречающихся слов
+
         return null;
     }
 
