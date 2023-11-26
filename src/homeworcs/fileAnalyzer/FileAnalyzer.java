@@ -37,49 +37,25 @@ public class FileAnalyzer {
 
     public int totalWordCount(String path) throws IOException {
         // Читаем файл, подсчитываем общее количество слов
-        String entireTxt = "";
-        File file = new File(path);
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-        String sentence;
-        while ((sentence = bufferedReader.readLine()) != null) {
-            entireTxt += sentence + " ";
+        int quantity = 0;
+         Map<String,Integer> map = new HashMap<>(wordMap(path));
+        for (Map.Entry<String,Integer> words: map.entrySet()) {
+            quantity += words.getValue();
         }
-        String[] txt = entireTxt.split(" ");
-        if (txt.length != 0) {
-            return txt.length;
-        }
-        return 0;
+        return quantity;
     }
 
     public int uniqueWordCount(String path) throws IOException {
         // Читаем файл, подсчитываем количество уникальных слов
-        int numberOfDistinctOnes = 0;
-        int quantity = 0;
-        String fulTxt = "";
-        File file = new File(path);
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-        String txt;
-        while ((txt = bufferedReader.readLine()) != null) {
-            fulTxt += txt + " ";
+        int one = 1;
+        int numberOfUnique = 0;
+        Map<String,Integer>map = new HashMap<>(wordMap(path));
+        for (Map.Entry<String,Integer> words:map.entrySet()) {
+             if (words.getValue() == one){
+                 numberOfUnique++;
+             }
         }
-        String[] words = fulTxt.split(" ");
-        for (String word : words) {
-            for (String word2 : words) {
-                if (word2.equals(word)) {
-                    quantity++;
-                }
-            }
-            if (quantity == 1) {
-                numberOfDistinctOnes++;
-                System.out.println(word + " " + numberOfDistinctOnes);
-            }
-            quantity = 0;
-        }
-        if (numberOfDistinctOnes != 0) {
-            System.out.print("չկրկնվողների ընդանուր քանակը-");
-            return numberOfDistinctOnes;
-        }
-        return 0;
+     return numberOfUnique;
     }
 
 
@@ -100,26 +76,15 @@ public class FileAnalyzer {
 
     public int countWordOccurrences(String path, String word) throws IOException {
         // Читаем файл, находим количество вхождений слова и возвращаем это число
-        int quantity = 0;
-        String fulTxt = "";
-        File file = new File(path);
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-        String txt;
-        while ((txt = bufferedReader.readLine()) != null) {
-            fulTxt += txt + " ";
-        }
-        String[] words = fulTxt.split(" ");
-        for (String word2 : words) {
-            if (word2.equals(word)) {
-                quantity++;
+          Map<String,Integer> map = new HashMap<>(wordMap(path));
+        for (Map.Entry<String,Integer> words:map.entrySet()) {
+            if (words.getKey().equals(word)){
+                System.out.print(words.getKey() + "-");
+                return words.getValue();
             }
         }
-        if (quantity != 0) {
-            System.out.print(word + "-");
-            return quantity;
-        }
-        System.err.println("չկա նման բառ");
-        return 0;
+        System.out.println("չկա նման բառ");
+       return 0;
     }
 }
 

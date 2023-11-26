@@ -10,7 +10,5 @@ public class BoxExample {
         Box myBox3 = myBox2;
         System.out.println(myBox3.height);
         System.out.println(myBox.height);
-
-
     }
 }
