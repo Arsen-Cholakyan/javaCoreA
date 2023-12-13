@@ -1,4 +1,4 @@
-package bookExamples;
+package bookExamples.chaptors2345;
 
 public class Chapter3 {
 

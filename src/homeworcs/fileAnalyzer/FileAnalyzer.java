@@ -29,10 +29,7 @@ public class FileAnalyzer {
             map.put(word, quantity);
             quantity = 0;
         }
-        if (map != null) {
             return map;
-        }
-        return null;
     }
 
     public int totalWordCount(String path) throws IOException {
@@ -68,10 +65,7 @@ public class FileAnalyzer {
                 map2.put(ars.getKey(), ars.getValue());
             }
         }
-        if (map2 != null) {
             return map2;
-        }
-        return null;
     }
 
     public int countWordOccurrences(String path, String word) throws IOException {
